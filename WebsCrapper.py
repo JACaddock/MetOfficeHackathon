@@ -1,3 +1,3 @@
 import scrapy as crap
 
-thisisthe = crap.core
+crapper = crap.Spider
