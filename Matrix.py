@@ -5,26 +5,30 @@ def arrayMaker(assumedfile):
     """ 
         This is all a skeleton for a txt file to turn data into an array :)
     """
-    file = open(assumedfile, 'r')
-    assumedtext = file.readlines()
-    list = []
-    index = 0
+    try:
+        file = open(assumedfile, 'r')
+        assumedtext = file.readlines()
+        list = []
+        index = 0
 
-    for info in assumedtext:
-        list.append([])
-        ninfo = info.split()
+        for info in assumedtext:
+            list.append([])
+            ninfo = info.split()
 
-        for item in ninfo:
-            numinfo = int(item)
-            list[index].append(numinfo)
+            for item in ninfo:
+                numinfo = int(item)
+                list[index].append(numinfo)
+            
+            index += 1
+
+        file.close()
         
-        index += 1
+        nparray = np.array(list)
 
-    file.close()
-    
-    nparray = np.array(list)
+        return nparray
 
-    return nparray
+    except:
+        return "Error, either String or Dimensions"
 
 
 if "__main__" == __name__:
