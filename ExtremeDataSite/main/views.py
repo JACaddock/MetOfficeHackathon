@@ -23,3 +23,6 @@ def vote(request, question_id):
 
 def BenjaminRespect(request):
     return render(request, 'main/BenjaminRespect.html')
+
+def About(request):
+    return render(request, main/benjamin/About.html)
