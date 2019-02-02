@@ -1,0 +1,45 @@
+body {
+    background-image: linear-gradient(rgb(255, 216, 200), rgb(250, 145, 103));
+    background-color: rgb(255, 160, 122);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
+
+p {
+    color: rebeccapurple;
+    font-weight: 500;
+    width: 55%;
+    margin-inline-start: 25%;
+}
+
+.container-formatting {
+    opacity: 0.7;
+    margin-top: 20px;  
+}
+
+.container-heading {
+    background-color: lightseagreen;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    width: 42% !important; 
+    border-radius: 25px;
+    padding-bottom: 10px;
+}
+
+.container-tabs {
+    background-color: goldenrod;
+    text-align: center;
+    font-weight: bold;
+    width: 10% !important; 
+    border-radius: 25px;
+}
+
+.container-tabs:hover {
+    opacity: 0.7;
+}
+
+.link-color {
+    color: rebeccapurple;
+}
