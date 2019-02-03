@@ -54,19 +54,19 @@ def load_info(location_name):
 def return_all(loc_name):
     loc = load_info(loc_name)
     att = {
-            "Name" : loc.name,
-            "Latitude" : loc.lat,
-            "Lonitude" : loc.long,
-            "Feels Like" : loc.feelslike,
-            "Wind Gust" : loc.windgust,
-            "Humidity" : loc.humidity,
-            "Temperature" : loc.temp,
-            "Visibility" : loc.visibility,
-            "Wind Direction" : loc.winddir,
-            "Wind Speed" : loc.windspeed,
-            "Max UV Index" : loc.maxuvindex,
-            "Weather Type" : loc.weathertype,
-            "Precipitation Probability" : loc.precipprob
+        "Name" : loc.name,
+        "Latitude" : loc.lat,
+        "Lonitude" : loc.long,
+        "Feels Like" : loc.feelslike,
+        "Wind Gust" : loc.windgust,
+        "Humidity" : loc.humidity,
+        "Temperature" : loc.temp,
+        "Visibility" : loc.visibility,
+        "Wind Direction" : loc.winddir,
+        "Wind Speed" : loc.windspeed,
+        "Max UV Index" : loc.maxuvindex,
+        "Weather Type" : loc.weathertype,
+        "Precipitation Probability" : loc.precipprob
 
     }
 
@@ -75,4 +75,7 @@ def return_all(loc_name):
 if __name__ == "__main__":
     loc = load_info("Killowen")
     print(loc.winddir)
-    print(return_all("Killowen"))
+    
+    locs = return_all("Killowen")
+    for key, value in locs.items():
+        print(key," = ", value)
