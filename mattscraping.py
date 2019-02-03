@@ -22,7 +22,7 @@ class Location:
         self.weathertype = weathertype
         self.precipprob = precipprob
 
-        
+
 def load_info(location_name):
     url = 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/xml/sitelist?key='+api_key
     req = urllib.request.urlopen(url)
@@ -37,21 +37,21 @@ def load_info(location_name):
                 url2 = 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/xml/'+id+'?res=3hourly&key='+api_key
                 req2 = urllib.request.urlopen(url2)
                 xml2 = BeautifulSoup(req2, 'xml')
-                
-                with xml2.find("DV").find("Period").find("Rep") as attributes:
-                    feelslike = attributes['F']
-                    windgust = attributes['G']
-                    humidity = attributes['H']
-                    temp = attributes['T']
-                    visibility = attributes['V']
-                    winddir = attributes['D']
-                    windspeed = attributes['S']
-                    maxuvindex = attributes['U']
-                    weathertype = attributes['W']
-                    precipprob = attributes['Pp']
+                attributes = xml2.find("SiteRep").find("DV").find("Location").find("Period").find("Rep")
+                feelslike = attributes['F']
+                windgust = attributes['G']
+                humidity = attributes['H']
+                temp = attributes['T']
+                visibility = attributes['V']
+                winddir = attributes['D']
+                windspeed = attributes['S']
+                maxuvindex = attributes['U']
+                weathertype = attributes['W']
+                precipprob = attributes['Pp']
                 newlocation = Location(location_name, lat, long, feelslike, windgust, humidity, temp, visibility, winddir, windspeed, maxuvindex, weathertype, precipprob)
                 return newlocation
 
 
-loc = load_info("Stonehaugh")
-print(loc.feelslike)
+loc = load_info("Killowen")
+
+print(loc.temp)
