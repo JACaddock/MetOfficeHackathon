@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import urllib.request
+import scrapy
 api_key = 'bb2a1f77-5607-4015-bca7-1d3d7c70d11f'
 #url = 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/datatype/sitelist?key='+ api_key
 
@@ -51,6 +52,11 @@ def load_info(location_name):
                 newlocation = Location(location_name, lat, long, feelslike, windgust, humidity, temp, visibility, winddir, windspeed, maxuvindex, weathertype, precipprob)
                 return newlocation
 
+
+def get_info(loc):
+    
+
 if __name__ == "__main__":
     loc = load_info("Killowen")
-    print(loc.winddir)
+    get_loc = get_info(loc)
+    print(loc)

@@ -17,4 +17,6 @@ urlpatterns = [
     path('benjamin', views.BenjaminRespect, name='BenjaminRespect'),
 
     path('benjamin/about', views.About, name='About'),
+
+    path('location', views.LocData, name="Locdata"),
     ]

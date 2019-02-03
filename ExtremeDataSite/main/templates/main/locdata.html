@@ -1,0 +1,11 @@
+{% load static %}
+
+<head>
+    <title>{{ scrape.chosen_loc }}</title>
+</head>
+
+<h1>{{ scrape.chosen_loc }}</h1>
+                    
+<% import mattscraping %>
+<% loc = load_info({{ scrape.chosen_loc }}) %>
+<% print loc %>

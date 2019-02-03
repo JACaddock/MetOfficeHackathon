@@ -2,7 +2,7 @@ from django.http import HttpResponse, Http404
 from django.template import loader
 from django.shortcuts import render, get_object_or_404
 
-from .models import Question
+from .models import Question, Scrape
 
 
 def index(request):
@@ -26,3 +26,6 @@ def BenjaminRespect(request):
 
 def About(request):
     return render(request, 'main/About.html')
+
+def LocData(request):
+    return render(request, 'main/locdata.html')
