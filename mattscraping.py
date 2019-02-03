@@ -51,7 +51,6 @@ def load_info(location_name):
                 newlocation = Location(location_name, lat, long, feelslike, windgust, humidity, temp, visibility, winddir, windspeed, maxuvindex, weathertype, precipprob)
                 return newlocation
 
-
-loc = load_info("Killowen")
-
-print(loc.temp)
+if __name__ == "__main__":
+    loc = load_info("Killowen")
+    print(loc.winddir)
