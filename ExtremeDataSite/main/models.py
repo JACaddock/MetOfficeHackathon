@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+import mattscraping
 
 
 # Create your models here.
@@ -23,3 +24,13 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+class Scrape(models.Model):
+    try:
+        chosen_loc = models.CharField(max_length=200)
+        loc = mattscraping.load_info(chosen_loc)
+
+        def __str__(self):
+            return self.loc
+    except:
+        print("Not found")
