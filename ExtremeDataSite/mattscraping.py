@@ -53,20 +53,23 @@ def load_info(location_name):
 
 def return_all(loc_name):
     loc = load_info(loc_name)
-    att = []
-    att.append(loc.name)
-    att.append(loc.lat)
-    att.append(loc.long)
-    att.append(loc.feelslike)
-    att.append(loc.windgust)
-    att.append(loc.humidity)
-    att.append(loc.temp)
-    att.append(loc.visibility)
-    att.append(loc.winddir)
-    att.append(loc.windspeed)
-    att.append(loc.maxuvindex)
-    att.append(loc.weathertype)
-    att.append(loc.precipprob)
+    att = {
+            "Name" : loc.name,
+            "Latitude" : loc.lat,
+            "Lonitude" : loc.long,
+            "Feels Like" : loc.feelslike,
+            "Wind Gust" : loc.windgust,
+            "Humidity" : loc.humidity,
+            "Temperature" : loc.temp,
+            "Visibility" : loc.visibility,
+            "Wind Direction" : loc.winddir,
+            "Wind Speed" : loc.windspeed,
+            "Max UV Index" : loc.maxuvindex,
+            "Weather Type" : loc.weathertype,
+            "Precipitation Probability" : loc.precipprob
+
+    }
+
     return att
 
 if __name__ == "__main__":
