@@ -1,6 +1,19 @@
-<h1>{{ question.question_text }}</h1>
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }}</li>
-{% endfor %}
-</ul>
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static "Benjamins.css" %}"  type="text/css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>{{ question.question_text }}</title>
+</head>
+
+<body>
+    <div class="container-formatting">
+        <h1 class="container-heading tab-color link-color" style="padding-bottom: 10px">{{ question.question_text }}</h1>
+                    
+        <ul>
+            {% for choice in question.choice_set.all %}
+                <li>{{ choice.choice_text }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
